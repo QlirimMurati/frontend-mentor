@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>FAQ accordion</title>
+</head>
+
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var accordions = document.getElementsByClassName('accordion-item-header');
+      for (item of accordions) {
+        item.addEventListener('click', function () {
+          var content = this.nextElementSibling;
+          if (content.style.display == 'none') {
+            content.style.display = 'flex';
+            this.querySelector('img').src = 'assets/images/icon-plus.svg';
+          }
+          else {
+            this.querySelector('img').src = 'assets/images/icon-minus.svg';
+            content.style.display = 'none';
+          }
+        })
+      }
+    })
+  </script>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-content">
+        <div class="header">
+          <div class="header-logo">
+            <img src="assets/images/icon-star.svg" alt="">
+          </div>
+          <div class="header-title">
+            FAQs
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              <div class="accordion-item-title">
+                First Accordion
+              </div>
+              <div class="accordion-item-logo" id="liri">
+                <img src="assets/images/icon-plus.svg" alt="expand">
+              </div>
+            </div>
+            <div class="accordion-item-content">
+              In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+              visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as
+              a placeholder before final copy is ava
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              <div class="accordion-item-title">
+                Second Accordion!
+              </div>
+              <div class="accordion-item-logo">
+                <img src="assets/images/icon-plus.svg" alt="expand">
+              </div>
+            </div>
+            <div class="accordion-item-content">
+              In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+              visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as
+              a placeholder before final copy is ava
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
